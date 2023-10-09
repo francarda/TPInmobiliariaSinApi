@@ -1,4 +1,4 @@
-package com.example.tpinmobiliariasinapi.ui.slideshow;
+package com.example.tpinmobiliariasinapi.ui.inmubles;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

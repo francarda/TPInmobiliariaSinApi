@@ -7,19 +7,44 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.tpinmobiliariasinapi.ui.home.HomeFragment"
+        android:name="com.example.tpinmobiliariasinapi.ui.inicio.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.example.tpinmobiliariasinapi.ui.gallery.GalleryFragment"
+        android:name="com.example.tpinmobiliariasinapi.ui.perfil.GalleryFragment"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.example.tpinmobiliariasinapi.ui.slideshow.SlideshowFragment"
+        android:name="com.example.tpinmobiliariasinapi.ui.inmubles.SlideshowFragment"
         android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_slideshow" >
+        <action
+            android:id="@+id/action_nav_slideshow_to_inmuebleDetalle"
+            app:destination="@id/inmuebleDetalle" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_inquilino"
+        android:name="com.example.tpinmobiliariasinapi.ui.inquilinos.InquilinosFragment"
+        android:label="fragment_inquilinos"
+        tools:layout="@layout/fragment_inquilinos" />
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="com.example.tpinmobiliariasinapi.ui.logout.LogoutFragment"
+        android:label="fragment_logout"
+        tools:layout="@layout/fragment_logout" />
+    <fragment
+        android:id="@+id/nav_contrato"
+        android:name="com.example.tpinmobiliariasinapi.ui.contratos.ContratoFragment"
+        android:label="fragment_contrato"
+        tools:layout="@layout/fragment_contrato" />
+    <fragment
+        android:id="@+id/inmuebleDetalle"
+        android:name="com.example.tpinmobiliariasinapi.ui.inmubles.InmuebleDetalle"
+        android:label="fragment_inmueble_detalle"
+        tools:layout="@layout/fragment_inmueble_detalle" />
+
 </navigation>

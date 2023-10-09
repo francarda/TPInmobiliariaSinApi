@@ -1,4 +1,4 @@
-package com.example.tpinmobiliariasinapi.ui.slideshow;
+package com.example.tpinmobiliariasinapi.ui.inmubles;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
