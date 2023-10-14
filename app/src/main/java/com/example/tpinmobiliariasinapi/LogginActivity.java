@@ -21,7 +21,9 @@ public class LogginActivity extends AppCompatActivity {
         binding.btLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+            String pass=binding.etContraseA.getText().toString();
+            String usuario= binding.etUsuario.getText().toString();
+            vm.login(usuario, pass);
             }
         });
 

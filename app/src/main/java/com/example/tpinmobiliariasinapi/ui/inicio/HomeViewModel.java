@@ -29,6 +29,10 @@ public class HomeViewModel extends ViewModel {
         }
         return mMapa;
     }
+    public void obtenerMapa(){
+        MapaActual ma= new MapaActual();
+        mMapa.setValue(ma);
+    }
 
     public class MapaActual implements OnMapReadyCallback {
 

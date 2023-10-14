@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -20,6 +21,7 @@ public class LogginActivityViewModel extends AndroidViewModel {
     public LogginActivityViewModel(@NonNull Application application) {
         super(application);
         context= application;
+        Log.d("salida", "propietario: ");
     }
 
 

@@ -1,6 +1,7 @@
 package com.example.tpinmobiliariasinapi.ui.perfil;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ public class GalleryFragment extends Fragment {
 
     private FragmentGalleryBinding binding;
     private GalleryViewModel vm;
+    private Propietario propietarioActual;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         vm= new ViewModelProvider(this).get(GalleryViewModel.class);
@@ -30,8 +32,9 @@ public class GalleryFragment extends Fragment {
         vm.getMPropietario().observe(getActivity(), new Observer<Propietario>() {
             @Override
             public void onChanged(Propietario propietario) {
+
                 binding.etApellido.setText(propietario.getApellido());
-                binding.etCodigo.setText(propietario.getId());
+                binding.etCodigo.setText(propietario.getId()+"");
                 binding.etDni.setText(propietario.getDni() +"");
                 binding.etEmail.setText(propietario.getEmail());
                 binding.etNombre.setText(propietario.getNombre());
@@ -39,6 +42,7 @@ public class GalleryFragment extends Fragment {
                 binding.etPass.setText(propietario.getContraseña());
                 binding.etCodigo.setEnabled(false);
                 binding.etCodigo.setFocusable(false);
+                propietarioActual= propietario;
 
             }
         });

@@ -1,4 +1,4 @@
-package com.example.tpinmobiliariasinapi.ui.inmubles;
+package com.example.tpinmobiliariasinapi.ui.inquilinos;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -17,12 +17,12 @@ import com.example.tpinmobiliariasinapi.model.Inmueble;
 
 import java.util.List;
 
-public class InmuebleAdapter extends RecyclerView.Adapter<InmuebleAdapter.ViewHolder> {
+public class InquilinoAdaptador extends RecyclerView.Adapter<com.example.tpinmobiliariasinapi.ui.inquilinos.InquilinoAdaptador.ViewHolder> {
     private List<Inmueble> inmuebles;
     private Context context;
     private LayoutInflater li;
 
-    public InmuebleAdapter(List<Inmueble> inmuebles, Context context, LayoutInflater li) {
+    public InquilinoAdaptador(List<Inmueble> inmuebles, Context context, LayoutInflater li) {
         this.inmuebles = inmuebles;
         this.context = context;
         this.li = li;
@@ -30,15 +30,15 @@ public class InmuebleAdapter extends RecyclerView.Adapter<InmuebleAdapter.ViewHo
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = li.inflate(R.layout.item_inmueble, parent, false);
+    public com.example.tpinmobiliariasinapi.ui.inquilinos.InquilinoAdaptador.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = li.inflate(R.layout.item_inquilino, parent, false);
 
 
-        return new ViewHolder(view);
+        return new com.example.tpinmobiliariasinapi.ui.inquilinos.InquilinoAdaptador.ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull com.example.tpinmobiliariasinapi.ui.inquilinos.InquilinoAdaptador.ViewHolder holder, int position) {
         holder.direccion.setText("Titulo: " + inmuebles.get(position).getDireccion());
         holder.precio.setText("Director: " + inmuebles.get(position).getPrecio());
 
@@ -61,8 +61,8 @@ public class InmuebleAdapter extends RecyclerView.Adapter<InmuebleAdapter.ViewHo
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            direccion = itemView.findViewById(R.id.tvDireccion);
-            precio = itemView.findViewById(R.id.tvPrecio);
+            direccion = itemView.findViewById(R.id.tvLPago);
+            precio = itemView.findViewById(R.id.tvLNPago);
 
 
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -74,13 +74,11 @@ public class InmuebleAdapter extends RecyclerView.Adapter<InmuebleAdapter.ViewHo
                     bundle.putSerializable("Inmueble", inmueble);
                     //bundle.putSerializable("nota", "algo");
                     // tengo que crear ese fragment
-                    Navigation.findNavController(view).navigate(R.id.inmuebleDetalle, bundle);
+                    Navigation.findNavController(view).navigate(R.id.inquilinoDetalle, bundle);
 
 
                 }
             });
-
-
         }
     }
 

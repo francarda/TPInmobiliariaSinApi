@@ -21,23 +21,26 @@ import com.google.android.gms.maps.SupportMapFragment;
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
+    private HomeViewModel vm;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        HomeViewModel homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+        vm = new ViewModelProvider(this).get(HomeViewModel.class);
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        homeViewModel.getMMapa().observe(getViewLifecycleOwner(), new Observer<HomeViewModel.MapaActual>() {
+        vm.getMMapa().observe(getViewLifecycleOwner(), new Observer<HomeViewModel.MapaActual>() {
             @Override
             public void onChanged(HomeViewModel.MapaActual mapaActual) {
-                @SuppressLint("ResourceType") SupportMapFragment smf = (SupportMapFragment) getActivity().getSupportFragmentManager().findFragmentById(R.layout.fragment_home);
+                //@SuppressLint("ResourceType") SupportMapFragment smf = (SupportMapFragment) getActivity().getSupportFragmentManager().findFragmentById(R.layout.fragment_home);
+                SupportMapFragment smf= (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
 
-               //@SuppressLint("ResourceType") SupportMapFragment smf=(SupportMapFragment) getChildFragmentManager().findFragmentById(R.layout.fragment_home);
+                //@SuppressLint("ResourceType") SupportMapFragment smf=(SupportMapFragment) getChildFragmentManager().findFragmentById(R.layout.fragment_home);
                 smf.getMapAsync(mapaActual);
             }
         });
+        vm.obtenerMapa();
+
 
         return root;
     }

@@ -30,7 +30,11 @@
         android:id="@+id/nav_inquilino"
         android:name="com.example.tpinmobiliariasinapi.ui.inquilinos.InquilinosFragment"
         android:label="fragment_inquilinos"
-        tools:layout="@layout/fragment_inquilinos" />
+        tools:layout="@layout/fragment_inquilinos" >
+        <action
+            android:id="@+id/action_nav_inquilino_to_inquilinoDetalle"
+            app:destination="@id/inquilinoDetalle" />
+    </fragment>
     <fragment
         android:id="@+id/nav_logout"
         android:name="com.example.tpinmobiliariasinapi.ui.logout.LogoutFragment"
@@ -40,11 +44,34 @@
         android:id="@+id/nav_contrato"
         android:name="com.example.tpinmobiliariasinapi.ui.contratos.ContratoFragment"
         android:label="fragment_contrato"
-        tools:layout="@layout/fragment_contrato" />
+        tools:layout="@layout/fragment_contrato" >
+        <action
+            android:id="@+id/action_nav_contrato_to_contratoDetalle"
+            app:destination="@id/contratoDetalle" />
+    </fragment>
     <fragment
         android:id="@+id/inmuebleDetalle"
         android:name="com.example.tpinmobiliariasinapi.ui.inmubles.InmuebleDetalle"
         android:label="fragment_inmueble_detalle"
         tools:layout="@layout/fragment_inmueble_detalle" />
+    <fragment
+        android:id="@+id/inquilinoDetalle"
+        android:name="com.example.tpinmobiliariasinapi.ui.inquilinos.InquilinoDetalle"
+        android:label="fragment_inquilino_detalle"
+        tools:layout="@layout/fragment_inquilino_detalle" />
+    <fragment
+        android:id="@+id/contratoDetalle"
+        android:name="com.example.tpinmobiliariasinapi.ui.contratos.ContratoDetalle"
+        android:label="fragment_contrato_detalle"
+        tools:layout="@layout/fragment_contrato_detalle" >
+        <action
+            android:id="@+id/action_contratoDetalle_to_pagoFragment"
+            app:destination="@id/pagoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pagoFragment"
+        android:name="com.example.tpinmobiliariasinapi.ui.contratos.PagoFragment"
+        android:label="fragment_pago"
+        tools:layout="@layout/fragment_pago" />
 
 </navigation>

@@ -14,7 +14,7 @@
         android:layout_height="344dp">
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/imgInquilinoItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="56dp"
@@ -24,24 +24,24 @@
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/tvDireccion"
+            android:id="@+id/tvLPago"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="36dp"
             android:text="TextView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+            app:layout_constraintTop_toBottomOf="@+id/imgInquilinoItem" />
 
         <TextView
-            android:id="@+id/tvPrecio"
+            android:id="@+id/tvLNPago"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="36dp"
             android:text="TextView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvDireccion" />
+            app:layout_constraintTop_toBottomOf="@+id/tvLPago" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

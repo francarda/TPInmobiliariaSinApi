@@ -2,6 +2,7 @@ package com.example.tpinmobiliariasinapi.ui.perfil;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.lifecycle.LiveData;
@@ -31,9 +32,11 @@ public class GalleryViewModel extends ViewModel {
     }
 
     public void cargarPropietario(Bundle bundle){
-        if (bundle==null){
+        if (bundle!=null){
             propietario= (Propietario) bundle.getSerializable("propietario");
             mPropietario.setValue(propietario);
+
+            Log.d("salida", "propietario: " + propietario.getNombre());
 
         }
 
@@ -42,6 +45,7 @@ public class GalleryViewModel extends ViewModel {
     public void editar(Propietario propietario, Context context) {
         ApiClient api= ApiClient.getApi();
         api.actualizarPerfil(propietario);
+        mPropietario.setValue(propietario);
         Toast.makeText(context, "Propietario actuaizado correctamente", Toast.LENGTH_SHORT).show();
     }
 }
