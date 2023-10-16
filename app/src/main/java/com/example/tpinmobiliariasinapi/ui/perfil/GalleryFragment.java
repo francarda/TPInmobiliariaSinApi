@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -22,7 +23,7 @@ public class GalleryFragment extends Fragment {
     private Propietario propietarioActual;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        vm= new ViewModelProvider(this).get(GalleryViewModel.class);
+        vm= new ViewModelProvider(getActivity()).get(GalleryViewModel.class);
 
         binding = FragmentGalleryBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
@@ -40,14 +41,15 @@ public class GalleryFragment extends Fragment {
                 binding.etNombre.setText(propietario.getNombre());
                 binding.etTelefono.setText(propietario.getTelefono());
                 binding.etPass.setText(propietario.getContraseña());
+                binding.etEmail.setEnabled(false);
                 binding.etCodigo.setEnabled(false);
                 binding.etCodigo.setFocusable(false);
                 propietarioActual= propietario;
 
             }
         });
-        Bundle bundle= (Bundle) getActivity().getIntent().getExtras();
-        vm.cargarPropietario(bundle);
+        //Bundle bundle= (Bundle) getActivity().getIntent().getExtras();
+
         binding.btEditar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,9 +65,10 @@ public class GalleryFragment extends Fragment {
             }
         });
 
-
+        vm.cargarPropietario();
         return root;
     }
+
 
     @Override
     public void onDestroyView() {

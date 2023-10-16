@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -39,9 +40,21 @@ public class InquilinoAdapter extends RecyclerView.Adapter<com.example.tpinmobil
 
     @Override
     public void onBindViewHolder(@NonNull com.example.tpinmobiliariasinapi.ui.inquilinos.InquilinoAdapter.ViewHolderB holder, int position) {
-        holder.direccion.setText("Titulo: " + inmuebles.get(position).getDireccion());
-        holder.precio.setText("Director: " + inmuebles.get(position).getPrecio());
+        Inmueble inmueble= inmuebles.get(position);
 
+        holder.direccion.setText("Direccion" + inmuebles.get(position).getDireccion());
+        holder.precio.setText("Precio" + inmuebles.get(position).getPrecio());
+        String nombreImagen = "casa_" + inmueble.getIdInmueble();
+
+
+        int idImagen = holder.itemView.getResources().getIdentifier(nombreImagen, "drawable", holder.itemView.getContext().getPackageName());
+        /*if (idImagen != 0) {
+            holder.imagen.setImageResource(idImagen);
+        } else {
+
+            holder.imagen.setImageResource(R.drawable.casa_501);
+        }*/
+       holder.imagen.setImageResource(R.drawable.casa_501);
         holder.inmueble = inmuebles.get(position);
 
 
@@ -56,6 +69,7 @@ public class InquilinoAdapter extends RecyclerView.Adapter<com.example.tpinmobil
     public class ViewHolderB extends RecyclerView.ViewHolder {
         private TextView direccion;
         private TextView precio;
+        private ImageView imagen;
         private Inmueble inmueble;
 
         public ViewHolderB(@NonNull View itemView) {
@@ -63,6 +77,7 @@ public class InquilinoAdapter extends RecyclerView.Adapter<com.example.tpinmobil
 
             direccion = itemView.findViewById(R.id.tvLPago);
             precio = itemView.findViewById(R.id.tvLNPago);
+            imagen= itemView.findViewById(R.id.imgInquilinoItem);
 
 
             itemView.setOnClickListener(new View.OnClickListener() {

@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tpinmobiliariasinapi.R;
@@ -37,9 +38,11 @@ public class SlideshowFragment extends Fragment {
             @Override
             public void onChanged(List<Inmueble> inmuebles) {
                 rv= getActivity().findViewById(R.id.rvInmuebles);
-                GridLayoutManager gl= new GridLayoutManager(getActivity(), inmuebles.size(),GridLayoutManager.HORIZONTAL, false);
-                rv.setLayoutManager(gl);
-                InquilinoAdapter ia= new InquilinoAdapter(inmuebles, getActivity(), getLayoutInflater());
+                LinearLayoutManager ll= new LinearLayoutManager(getActivity());
+                //GridLayoutManager gl= new GridLayoutManager(getActivity(), inmuebles.size(),GridLayoutManager.HORIZONTAL, false);
+                //rv.setLayoutManager(gl);
+                rv.setLayoutManager(ll);
+                InmuebleAdapter ia= new InmuebleAdapter(inmuebles, getActivity(), getLayoutInflater());
                 rv.setAdapter(ia);
 
             }

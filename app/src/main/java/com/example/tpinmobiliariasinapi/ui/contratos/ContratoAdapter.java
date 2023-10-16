@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -39,10 +40,20 @@ public class ContratoAdapter extends RecyclerView.Adapter<com.example.tpinmobili
 
     @Override
     public void onBindViewHolder(@NonNull com.example.tpinmobiliariasinapi.ui.contratos.ContratoAdapter.ViewHolder holder, int position) {
+        Inmueble inmueble= inmuebles.get(position);
         holder.direccion.setText("Titulo: " + inmuebles.get(position).getDireccion());
         holder.precio.setText("Director: " + inmuebles.get(position).getPrecio());
-
         holder.inmueble = inmuebles.get(position);
+        String nombreImagen = "casa_" + inmueble.getIdInmueble();
+
+        int idImagen = holder.itemView.getResources().getIdentifier(nombreImagen, "drawable", holder.itemView.getContext().getPackageName());
+        if (idImagen != 0) {
+            holder.imagen.setImageResource(idImagen);
+        } else {
+
+            holder.imagen.setImageResource(R.drawable.casa_501);
+        }
+
 
 
     }
@@ -56,6 +67,7 @@ public class ContratoAdapter extends RecyclerView.Adapter<com.example.tpinmobili
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView direccion;
         private TextView precio;
+        private ImageView imagen;
         private Inmueble inmueble;
 
         public ViewHolder(@NonNull View itemView) {
@@ -63,7 +75,7 @@ public class ContratoAdapter extends RecyclerView.Adapter<com.example.tpinmobili
 
             direccion = itemView.findViewById(R.id.tvDireccionC);
             precio = itemView.findViewById(R.id.tvPrecioC);
-
+            imagen= itemView.findViewById(R.id.imgContrato);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @SuppressLint("ResourceType")

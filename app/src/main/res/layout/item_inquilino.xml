@@ -15,8 +15,8 @@
 
         <ImageView
             android:id="@+id/imgInquilinoItem"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_marginTop="56dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -27,6 +27,8 @@
             android:id="@+id/tvLPago"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="20dp"
+
             android:layout_marginTop="36dp"
             android:text="TextView"
             app:layout_constraintEnd_toEndOf="parent"
@@ -39,6 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="36dp"
             android:text="TextView"
+            android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvLPago" />

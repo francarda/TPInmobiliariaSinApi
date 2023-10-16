@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp"
-    app:cardBackgroundColor="@color/teal_200"
+    android:layout_margin="5dp"
+    app:cardBackgroundColor="#F6D8DB"
     app:cardCornerRadius="20dp"
     app:cardElevation="10dp">
 
@@ -30,6 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="TextView"
+            android:textColor="#2C5E2E"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.04"
             app:layout_constraintStart_toEndOf="@+id/tvLPago"
@@ -52,6 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="TextView"
+            android:textColor="#2C5E2E"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.07"
             app:layout_constraintStart_toEndOf="@+id/tvLNPago"
@@ -73,6 +75,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="TextView"
+            android:textColor="#2C5E2E"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.043"
             app:layout_constraintStart_toEndOf="@+id/textView28"
@@ -94,6 +97,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="TextView"
+            android:textColor="#2C5E2E"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.047"
             app:layout_constraintStart_toEndOf="@+id/textView33"
@@ -116,6 +120,7 @@
             android:layout_marginStart="4dp"
             android:layout_marginTop="8dp"
             android:text="TextView"
+            android:textColor="#2C5E2E"
             app:layout_constraintStart_toEndOf="@+id/textView36"
             app:layout_constraintTop_toBottomOf="@+id/tvImporteP" />
 

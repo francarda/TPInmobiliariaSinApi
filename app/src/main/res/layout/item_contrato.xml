@@ -5,18 +5,18 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
-    app:cardBackgroundColor="@color/teal_200"
+    app:cardBackgroundColor="#E8CBCC"
     app:cardCornerRadius="20dp"
     app:cardElevation="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="212dp"
+        android:layout_width="246dp"
         android:layout_height="344dp">
 
         <ImageView
-            android:id="@+id/imgInquilinoItem"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/imgContrato"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_marginTop="56dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -29,16 +29,20 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="36dp"
             android:text="TextView"
+            android:textSize="20dp"
+            android:textColor="#387E3B"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgInquilinoItem" />
+            app:layout_constraintTop_toBottomOf="@+id/imgContrato" />
 
         <TextView
             android:id="@+id/tvPrecioC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="20dp"
             android:text="TextView"
+            android:textColor="#387E3B"
+            android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvDireccionC" />

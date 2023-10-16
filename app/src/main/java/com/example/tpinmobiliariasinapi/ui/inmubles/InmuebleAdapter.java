@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -39,8 +40,20 @@ public class InmuebleAdapter extends RecyclerView.Adapter<InmuebleAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.direccion.setText("Titulo: " + inmuebles.get(position).getDireccion());
-        holder.precio.setText("Director: " + inmuebles.get(position).getPrecio());
+        Inmueble inmueble= inmuebles.get(position);
+        holder.direccion.setText("Dirección:" + inmuebles.get(position).getDireccion());
+        holder.precio.setText("Precio: " + inmuebles.get(position).getPrecio());
+
+        String nombreImagen = "casa_" + inmueble.getIdInmueble();
+
+        // Obtiene el ID de la imagen a través de su nombre en el directorio de recursos
+        int idImagen = holder.itemView.getResources().getIdentifier(nombreImagen, "drawable", holder.itemView.getContext().getPackageName());
+        if (idImagen != 0) {
+            holder.imagen.setImageResource(idImagen);
+        } else {
+            // Si no se encuentra la imagen, puedes cargar una imagen predeterminada o manejar el caso según tus necesidades
+            holder.imagen.setImageResource(R.drawable.casa_501);
+        }
 
         holder.inmueble = inmuebles.get(position);
 
@@ -56,6 +69,8 @@ public class InmuebleAdapter extends RecyclerView.Adapter<InmuebleAdapter.ViewHo
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView direccion;
         private TextView precio;
+
+        private ImageView imagen;
         private Inmueble inmueble;
 
         public ViewHolder(@NonNull View itemView) {
@@ -63,6 +78,7 @@ public class InmuebleAdapter extends RecyclerView.Adapter<InmuebleAdapter.ViewHo
 
             direccion = itemView.findViewById(R.id.tvDireccion);
             precio = itemView.findViewById(R.id.tvPrecio);
+            imagen= itemView.findViewById(R.id.inmuebleImagen);
 
 
             itemView.setOnClickListener(new View.OnClickListener() {

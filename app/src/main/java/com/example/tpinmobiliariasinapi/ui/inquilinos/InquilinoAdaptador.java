@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -39,8 +40,18 @@ public class InquilinoAdaptador extends RecyclerView.Adapter<com.example.tpinmob
 
     @Override
     public void onBindViewHolder(@NonNull com.example.tpinmobiliariasinapi.ui.inquilinos.InquilinoAdaptador.ViewHolder holder, int position) {
-        holder.direccion.setText("Titulo: " + inmuebles.get(position).getDireccion());
-        holder.precio.setText("Director: " + inmuebles.get(position).getPrecio());
+       Inmueble inmu=inmuebles.get(position);
+        holder.direccion.setText("Dirección: " + inmuebles.get(position).getDireccion());
+        holder.precio.setText("Precio: " + inmuebles.get(position).getPrecio());
+        String nombreImagen = "casa_" + inmu.getIdInmueble();
+
+        int idImagen = holder.itemView.getResources().getIdentifier(nombreImagen, "drawable", holder.itemView.getContext().getPackageName());
+        if (idImagen != 0) {
+            holder.imagen.setImageResource(idImagen);
+        } else {
+
+            holder.imagen.setImageResource(R.drawable.casa_501);
+        }
 
         holder.inmueble = inmuebles.get(position);
 
@@ -56,6 +67,7 @@ public class InquilinoAdaptador extends RecyclerView.Adapter<com.example.tpinmob
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView direccion;
         private TextView precio;
+        private ImageView imagen;
         private Inmueble inmueble;
 
         public ViewHolder(@NonNull View itemView) {
@@ -63,6 +75,7 @@ public class InquilinoAdaptador extends RecyclerView.Adapter<com.example.tpinmob
 
             direccion = itemView.findViewById(R.id.tvLPago);
             precio = itemView.findViewById(R.id.tvLNPago);
+            imagen= itemView.findViewById(R.id.imgInquilinoItem);
 
 
             itemView.setOnClickListener(new View.OnClickListener() {

@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 
 import com.example.tpinmobiliariasinapi.R;
 import com.example.tpinmobiliariasinapi.databinding.FragmentInmuebleDetalleBinding;
@@ -33,6 +34,7 @@ public class InmuebleDetalle extends Fragment {
         vm= new ViewModelProvider(this).get(InmuebleDetalleViewModel.class);
        binding = FragmentInmuebleDetalleBinding.inflate(inflater, container, false);
        View root = binding.getRoot();
+
        vm.getMInmueble().observe(getActivity(), new Observer<Inmueble>() {
            @Override
            public void onChanged(Inmueble inmueble) {
@@ -43,8 +45,20 @@ public class InmuebleDetalle extends Fragment {
                binding.tvDIPrecio.setText(inmueble.getPrecio()+"");
                binding.tvDITipo.setText(inmueble.getTipo());
                binding.tvDIUso.setText(inmueble.getUso());
-               binding.radioButton.setChecked(inmueble.isEstado());
+               binding.cbDisponible.setChecked(inmueble.isEstado());
+               //binding.cbDisponible.setEnabled(false);
+               String nombreImagen="casa_" + inmueble.getIdInmueble();
+               int idImagen = requireContext().getResources().getIdentifier(nombreImagen, "drawable", requireContext().getPackageName());
+               binding.imagenInmuebleDetalle.setImageResource(idImagen);
 
+           }
+       });
+       binding.cbDisponible.setOnClickListener(new View.OnClickListener() {
+
+           @Override
+           public void onClick(View view) {
+               CheckBox cb= (CheckBox) view;
+               vm.editarDisponible(cb.isChecked(), getContext());
            }
        });
         Bundle bundle= getArguments();

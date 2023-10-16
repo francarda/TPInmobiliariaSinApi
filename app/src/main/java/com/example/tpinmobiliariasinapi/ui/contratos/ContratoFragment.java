@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -41,9 +42,11 @@ public class ContratoFragment extends Fragment {
             @Override
             public void onChanged(List<Inmueble> inmuebles) {
                 rv= getActivity().findViewById(R.id.rvContratos);
-                GridLayoutManager gl= new GridLayoutManager(getActivity(), inmuebles.size(),GridLayoutManager.HORIZONTAL, false);
-                rv.setLayoutManager(gl);
+                LinearLayoutManager ll= new LinearLayoutManager(getActivity());
+               // GridLayoutManager gl= new GridLayoutManager(getActivity(), inmuebles.size(),GridLayoutManager.HORIZONTAL, false);
+                //rv.setLayoutManager(gl);
                 ContratoAdapter ca= new ContratoAdapter(inmuebles, getActivity(), getLayoutInflater());
+                rv.setLayoutManager(ll);
                 rv.setAdapter(ca);
 
             }

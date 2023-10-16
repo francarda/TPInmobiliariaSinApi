@@ -8,19 +8,19 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.tpinmobiliariasinapi.ui.inicio.HomeFragment"
-        android:label="@string/menu_home"
+        android:label="Inicio"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_gallery"
         android:name="com.example.tpinmobiliariasinapi.ui.perfil.GalleryFragment"
-        android:label="@string/menu_gallery"
+        android:label="Perfil"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.example.tpinmobiliariasinapi.ui.inmubles.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:label="Inmuebles"
         tools:layout="@layout/fragment_slideshow" >
         <action
             android:id="@+id/action_nav_slideshow_to_inmuebleDetalle"
@@ -29,7 +29,7 @@
     <fragment
         android:id="@+id/nav_inquilino"
         android:name="com.example.tpinmobiliariasinapi.ui.inquilinos.InquilinosFragment"
-        android:label="fragment_inquilinos"
+        android:label="Inquilinos"
         tools:layout="@layout/fragment_inquilinos" >
         <action
             android:id="@+id/action_nav_inquilino_to_inquilinoDetalle"
@@ -43,7 +43,7 @@
     <fragment
         android:id="@+id/nav_contrato"
         android:name="com.example.tpinmobiliariasinapi.ui.contratos.ContratoFragment"
-        android:label="fragment_contrato"
+        android:label="Contrato"
         tools:layout="@layout/fragment_contrato" >
         <action
             android:id="@+id/action_nav_contrato_to_contratoDetalle"
@@ -52,17 +52,17 @@
     <fragment
         android:id="@+id/inmuebleDetalle"
         android:name="com.example.tpinmobiliariasinapi.ui.inmubles.InmuebleDetalle"
-        android:label="fragment_inmueble_detalle"
+        android:label="Detalles del inmueble"
         tools:layout="@layout/fragment_inmueble_detalle" />
     <fragment
         android:id="@+id/inquilinoDetalle"
         android:name="com.example.tpinmobiliariasinapi.ui.inquilinos.InquilinoDetalle"
-        android:label="fragment_inquilino_detalle"
+        android:label="Detalles del inquilino"
         tools:layout="@layout/fragment_inquilino_detalle" />
     <fragment
         android:id="@+id/contratoDetalle"
         android:name="com.example.tpinmobiliariasinapi.ui.contratos.ContratoDetalle"
-        android:label="fragment_contrato_detalle"
+        android:label="Detalle del contrato"
         tools:layout="@layout/fragment_contrato_detalle" >
         <action
             android:id="@+id/action_contratoDetalle_to_pagoFragment"
@@ -71,7 +71,7 @@
     <fragment
         android:id="@+id/pagoFragment"
         android:name="com.example.tpinmobiliariasinapi.ui.contratos.PagoFragment"
-        android:label="fragment_pago"
+        android:label="Pagos"
         tools:layout="@layout/fragment_pago" />
 
 </navigation>
